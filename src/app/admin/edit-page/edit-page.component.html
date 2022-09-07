@@ -1,33 +1,20 @@
 <div *ngIf="form; else Loading" class="parent">
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <div
-      class="form-control"
-      [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
-    >
+    <div class="form-control" [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}">
       <label for="title">Post title:</label>
       <input id="title" type="text" formControlName="title">
-      <div
-        class="validation"
-        *ngIf="form.get('title').touched && form.get('title').invalid"
-      >
+      <div class="validation" *ngIf="form.get('title').touched && form.get('title').invalid">
         <small *ngIf="form.get('title').errors.required">Enter post title</small>
       </div>
     </div>
 
     <label for="text">Post text:</label>
     <div class="form-control">
-       <textarea
-         id="text"
-         formControlName="text"
-         rows="4" cols="50" placeholder="Write here...">
-    </textarea>
+      <textarea id="text" formControlName="text" rows="4" cols="50" placeholder="Write here...">
+      </textarea>
     </div>
 
-    <button
-      class="btn btn-primary"
-      type="submit"
-      [disabled]="form.invalid || submittedFlag"
-    >
+    <button class="btn btn-primary" type="submit" [disabled]="form.invalid || submittedFlag">
       Update
     </button>
 
@@ -40,3 +27,5 @@
     <img src="./assets/Spinner-2.gif" alt="loading">
   </div>
 </ng-template>
+
+<app-alert></app-alert>

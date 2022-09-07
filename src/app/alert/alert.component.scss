@@ -1,0 +1,25 @@
+.alert {
+    padding: 20px;
+    position: absolute;
+    width: 300px;
+    top: 60px;
+    z-index: 1000;
+    left: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .alert-success {
+    color: white;
+    background: #087e01;
+  }
+  
+  .alert-error {
+    color: white;
+    background: #f44336;
+  }
+  
+  .alert-info {
+    color: #3a60b7;
+    background: #eee;
+  }

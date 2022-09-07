@@ -12,14 +12,16 @@ import {SharedModule} from "../shared/shared.module";
 import {AuthGuard} from "./shared/services/auth.guard";
 import { RegisterComponent } from './register/register.component';
 import { SearchPipe } from './shared/services/search.pipe';
+import { AlertModule } from './../alert/alert.module';
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     AdminRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    AlertModule
   ],
   exports: [],
   declarations: [

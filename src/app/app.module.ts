@@ -16,6 +16,9 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { AlertService } from './shared/services/alert.service';
+import { AlertModule } from './alert/alert.module';
+
 registerLocaleData(ruLocale, 'en')
 
 const INTERCEPTOR_PROVIDER: Provider = {
@@ -33,14 +36,15 @@ const INTERCEPTOR_PROVIDER: Provider = {
     PostPageComponent,
   ],
   imports: [
-    BrowserModule,
+BrowserModule,
     AppRoutingModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
+    AlertModule
   ],
-  providers: [INTERCEPTOR_PROVIDER],
+  providers: [INTERCEPTOR_PROVIDER, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

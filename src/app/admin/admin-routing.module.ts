@@ -7,6 +7,8 @@ import {CreatePageComponent} from "./create-page/create-page.component";
 import {EditPageComponent} from "./edit-page/edit-page.component";
 import {AuthGuard} from "./shared/services/auth.guard";
 import {RegisterComponent} from "./register/register.component";
+import { ErrorComponent } from './../shared/components/error/error.component';
+
 
 const AdminRoutes: Routes = [
   {
@@ -18,12 +20,14 @@ const AdminRoutes: Routes = [
       {path: 'create', component: CreatePageComponent, canActivate: [AuthGuard]},
       {path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
     ]
-  }
+  },
+  { path: '**', component: ErrorComponent }
+
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(AdminRoutes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 
 export class AdminRoutingModule {

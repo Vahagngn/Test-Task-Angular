@@ -4,6 +4,7 @@ import {PostsService} from "../../shared/services/posts.service";
 import {delay, Subscription, switchMap} from "rxjs";
 import {Post} from "../../shared/interfaces";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { AlertService } from './../../shared/services/alert.service';
 
 @Component({
   selector: 'app-edit-page',
@@ -17,10 +18,11 @@ export class EditPageComponent implements OnInit, OnDestroy {
   submittedFlag = false
   sub$: Subscription
 
-  constructor(private route: ActivatedRoute,
-              private postService: PostsService,
-              ) {
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private postService: PostsService,
+    private alert: AlertService
+    ) {}
 
   ngOnInit(): void {
     this.route.params.pipe(
@@ -50,9 +52,8 @@ export class EditPageComponent implements OnInit, OnDestroy {
       text: this.form.value.text,
       title: this.form.value.title,
     }).subscribe(() => {
-
+      this.alert.success('You have successfully updated the description')
       this.submittedFlag = false
-      // this.alertService.warning('Post successfully updated')
     })
   }
 

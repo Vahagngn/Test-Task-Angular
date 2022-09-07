@@ -3,7 +3,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../shared/interfaces";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {AuthService} from "../shared/services/auth.service";
-import {log} from "util";
 
 @Component({
   selector: 'app-login-page',
@@ -20,7 +19,7 @@ export class LoginPageComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
   }
 
@@ -50,6 +49,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   submit() {
+    // this.alert.error('You entered an invalid email');
     if (this.form.invalid) {
       return
     }
