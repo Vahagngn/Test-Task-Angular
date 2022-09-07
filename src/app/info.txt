@@ -1,0 +1,40 @@
+tsconfig.json add
+    "compilerOptions": {
+      "strictPropertyInitialization": false,
+      "strictNullChecks": false,
+      "noPropertyAccessFromIndexSignature": false,
+      "noImplicitReturns": false,
+    }
+    "angularCompilerOptions": {
+      "allowSyntheticDefaultImports": true,
+    }
+
+------------------------------------------------------------------------------------------------
+
+npm install firebase @angular/fire
+
+Firebase config
+
+fb - admin user 1
+mail: h@gmail.com
+pass: 000000
+
+fb - admin user 2
+mail: v@gmail.com
+pass: Vahag@123
+
+fb - admin user 3
+mail: a@gmail.com
+pass: 123456
+
+
+
+------------------------------------------------------------------------------------------------
+
+
+FbapiAuth: https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
+apiKey: "AIzaSyC-q3SRS5y9T4vcQmEnlejAtfeMHHqtTik",
+
+fbDbUrl: 'https://angular-testtask-default-rtdb.europe-west1.firebasedatabase.app'
+
+------------------------------------------------------------------------------------------------

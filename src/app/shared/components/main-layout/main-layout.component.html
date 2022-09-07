@@ -1,0 +1,27 @@
+<nav class="navbar bg-primary">
+  <h1 >
+    <a routerLink="/">Angular Test Task</a>
+  </h1>
+  <ul
+
+  >
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'login']">Sign In</a>
+    </li>
+  </ul>
+
+<!--  <ul-->
+<!--    *ngIf="!auth.isAuthenticated()"-->
+<!--  >-->
+<!--    <li routerLinkActive="active">-->
+<!--      <a [routerLink]="['/admin', 'login']">Sign In</a>-->
+<!--    </li>-->
+<!--    <li routerLinkActive="active">-->
+<!--      <a [routerLink]="['/admin', 'register']">Sign up</a>-->
+<!--    </li>-->
+<!--  </ul>-->
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
